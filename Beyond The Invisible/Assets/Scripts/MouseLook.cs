@@ -28,7 +28,7 @@ public class MouseLook : MonoBehaviour
         //Inverted Controls: verticalRotation = verticalRotation + mouseY;
 
         //Clamp it to avoid full rotation
-        verticalRotation = Mathf.Clamp(verticalRotation, -80f, 80f);
+        verticalRotation = Mathf.Clamp(verticalRotation, -60f, 70f);
 
         transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 
