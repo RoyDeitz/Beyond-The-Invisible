@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 { //Reference to the Character controller
     CharacterController controller;
+    float health = 100;
+    public Slider healthSlider;
+    bool hasShield=false;
+    bool inDanger = false;
 
     //Player Movement Speed
     public float movementSpeed = 12f;
@@ -20,14 +25,41 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     bool isGrounded;
+    public GameObject shield;
 
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        hasShield = false;
     }
 
     void Update()
     {
+        healthSlider.value = health;
+        if (inDanger)
+        {
+            if (!hasShield)
+            {
+                health -= 7f * Time.deltaTime;
+            }
+            else 
+            {
+                health -= .5f * Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.V)) 
+        {
+            hasShield = !hasShield;
+        }
+        if (hasShield)
+        {
+            shield.SetActive(true);
+        }
+        else 
+        {
+            shield.SetActive(false);
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
 
         float x = Input.GetAxis("Horizontal");
@@ -64,5 +96,32 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(verticalVelocity * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "NPC") 
+        {
+            if (Input.GetKeyDown(KeyCode.F)) 
+            {
+            //Start dialogue
+            }
+        }
+        
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Danger")
+        {
+            inDanger = true;
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(inDanger)inDanger = false;
     }
 }
