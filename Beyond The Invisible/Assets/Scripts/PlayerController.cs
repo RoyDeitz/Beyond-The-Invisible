@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 12f;
     public float sprintFactor = 2f;
     Vector3 movementVector;
+    Vector3 moveDirection;
+    public float rotationSmoothTime = .1f;
+    float rotationSmoothVelocity;
+    public Transform cam;
 
     //Gravity/Jumping Velocity
     Vector3 verticalVelocity;
@@ -62,21 +66,40 @@ public class PlayerController : MonoBehaviour
         }
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
         //Only change the movement Vector if grounded
         if (isGrounded)
         {
-            movementVector = transform.forward * z + transform.right * x;
-            if (movementVector.magnitude > 1f)
+            //movementVector = transform.forward * z + transform.right * x;
+            movementVector = new Vector3(x, 0, z);
+
+            //if (movementVector.magnitude > 1f)
+            //    movementVector = movementVector.normalized;
+
+            if (movementVector.magnitude > .1f)
+            {
                 movementVector = movementVector.normalized;
+                float targetAngle = Mathf.Atan2(movementVector.x, movementVector.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSmoothVelocity, rotationSmoothTime);
+                transform.rotation = Quaternion.Euler(0, angle, 0);
+                moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+
+
+            }
+            else 
+            {
+                moveDirection = Vector3.zero;
+            }
         }
+
+      
 
         //Double the speed on sprint button
         if (Input.GetKey(KeyCode.LeftShift) && z > 0 && isGrounded == true) movementVector = movementVector * sprintFactor;
 
-        controller.Move(movementVector * movementSpeed * Time.deltaTime);
+        controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
