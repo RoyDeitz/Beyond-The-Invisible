@@ -2799,8 +2799,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1106558388}
-  - component: {fileID: 1106558387}
-  - component: {fileID: 1106558386}
   - component: {fileID: 1106558385}
   - component: {fileID: 1106558384}
   - component: {fileID: 1106558383}
@@ -2824,18 +2822,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 2010436395}
-  movementSpeed: 8
-  sprintFactor: 2
+  movementSpeed: 3
+  sprintFactor: 1.2
   groundCheckRadius: 0.1
   rotationSmoothTime: 0.1
   cam: {fileID: 330585546}
-  jumpHeight: 2
+  jumpHeight: 1
   gravity: -9.81
   groundCheck: {fileID: 1078302413}
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
   shield: {fileID: 597721107}
+  anim: {fileID: 1699672589}
 --- !u!143 &1106558384
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2868,56 +2867,6 @@ CapsuleCollider:
   m_Height: 1.82
   m_Direction: 1
   m_Center: {x: 0, y: -0.01, z: -0.00000008940697}
---- !u!23 &1106558386
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106558382}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a2d6e425942dc9543acbdb68ad1cb5d3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1106558387
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106558382}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1106558388
 Transform:
   m_ObjectHideFlags: 0
@@ -14032,12 +13981,38 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &1699672587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b2dc245eda642ba45882ac796ecb3b94,
+    type: 3}
+  m_PrefabInstance: {fileID: 845377616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1699672588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b2dc245eda642ba45882ac796ecb3b94,
     type: 3}
   m_PrefabInstance: {fileID: 845377616}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1699672589
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699672587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: beabb37d64c6542489317811c1203d07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1878678267
 GameObject:
   m_ObjectHideFlags: 0
