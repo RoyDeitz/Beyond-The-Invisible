@@ -17,13 +17,13 @@ namespace QuantumTek.QuantumDialogue.Demo
         private List<TextMeshProUGUI> inactiveChoices = new List<TextMeshProUGUI>();
 
         private bool ended;
-        public string conversationTitle= "Meeting Secury Guard";
+        public string conversationTitle= "Meeting Security Guard";
 
        
 
         private void Awake()
         {
-            handler.SetConversation(conversationTitle);
+            handler.SetConversation("Meeting Security Guard");
             SetText();
         }
         private void OnEnable()

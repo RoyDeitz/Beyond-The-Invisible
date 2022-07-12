@@ -1183,6 +1183,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3260498778210870696, guid: c6459a9284e948141b470ecd70f29156,
+        type: 3}
+      propertyPath: handler
+      value: 
+      objectReference: {fileID: 1336591484}
+    - target: {fileID: 3260498778210870696, guid: c6459a9284e948141b470ecd70f29156,
+        type: 3}
+      propertyPath: conversationTitle
+      value: Meeting Security Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 3260498778210870697, guid: c6459a9284e948141b470ecd70f29156,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1296,7 +1306,7 @@ PrefabInstance:
     - target: {fileID: 3260498778210870701, guid: c6459a9284e948141b470ecd70f29156,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6459a9284e948141b470ecd70f29156, type: 3}
@@ -12419,6 +12429,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313012695}
   m_CullTransparentMesh: 1
+--- !u!114 &1336591484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 121430597780343842, guid: 3672c35170731c549a1ca1f617e6eb66,
+    type: 3}
+  m_PrefabInstance: {fileID: 625028365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e215bbb36679a431e93c51bb0514659e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1341843948
 GameObject:
   m_ObjectHideFlags: 0
