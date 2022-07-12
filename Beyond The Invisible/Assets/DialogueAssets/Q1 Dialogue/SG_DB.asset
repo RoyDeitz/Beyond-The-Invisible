@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a74e3a65cc4b487bb14b164cb3ec0e7, type: 3}
-  m_Name: DS_Database
+  m_Name: SG_DB
   m_EditorClassIdentifier: 
-  DataDB: {fileID: 11400000, guid: d781ab2e29213e147b169c59e2e191e4, type: 2}
-  NextID: 14
+  DataDB: {fileID: 11400000, guid: 7080389c694f01943b7c44c262ad9f06, type: 2}
+  NextID: 11
   Nodes:
-  - ID: 2
+  - ID: 0
     Type: 1
     Window:
       serializedVersion: 2
-      x: 68
-      y: 297
+      x: 67
+      y: 332
       width: 200
       height: 65
     Inputs: []
@@ -31,7 +31,7 @@ MonoBehaviour:
       Y: 40
       AllowMultipleConnections: 0
       Connections:
-        keys: 0c000000
+        keys: 03000000
         values:
         - Array: 01000000
     AllowedInputs: []
@@ -40,12 +40,12 @@ MonoBehaviour:
       InputID: 1
       OutputType: 1
       OutputID: 0
-  - ID: 3
+  - ID: 1
     Type: 2
     Window:
       serializedVersion: 2
-      x: 66
-      y: 1
+      x: 63
+      y: 110
       width: 200
       height: 110
     Inputs: []
@@ -56,7 +56,7 @@ MonoBehaviour:
       Y: 40
       AllowMultipleConnections: 1
       Connections:
-        keys: 04000000
+        keys: 03000000
         values:
         - Array: 00000000
     AllowedInputs: []
@@ -65,12 +65,39 @@ MonoBehaviour:
       InputID: 0
       OutputType: 2
       OutputID: 0
-  - ID: 4
+  - ID: 2
+    Type: 2
+    Window:
+      serializedVersion: 2
+      x: 375
+      y: 24
+      width: 200
+      height: 110
+    Inputs: []
+    Outputs:
+    - ID: 0
+      Name: Messages
+      Type: 1
+      Y: 40
+      AllowMultipleConnections: 1
+      Connections:
+        keys: 040000000700000008000000
+        values:
+        - Array: 00000000
+        - Array: 00000000
+        - Array: 00000000
+    AllowedInputs: []
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 2
+      OutputID: 0
+  - ID: 3
     Type: 3
     Window:
       serializedVersion: 2
-      x: 671
-      y: 146
+      x: 369
+      y: 357
       width: 200
       height: 175
     Inputs:
@@ -80,7 +107,7 @@ MonoBehaviour:
       Y: 7.5
       AllowMultipleConnections: 0
       Connections:
-        keys: 03000000
+        keys: 01000000
         values:
         - Array: 00000000
     - ID: 1
@@ -89,7 +116,102 @@ MonoBehaviour:
       Y: 35
       AllowMultipleConnections: 0
       Connections:
-        keys: 0c000000
+        keys: 00000000
+        values:
+        - Array: 00000000
+    Outputs:
+    - ID: 0
+      Name: Speaker
+      Type: 1
+      Y: 7.5
+      AllowMultipleConnections: 1
+      Connections:
+        keys: 
+        values: []
+    - ID: 1
+      Name: Next
+      Type: 1
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 04000000
+        values:
+        - Array: 01000000
+    AllowedInputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 2
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 3
+      InputID: 1
+      OutputType: 1
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 0
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 3
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 0
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 2
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 3
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 4
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 5
+      OutputType: 3
+      OutputID: 1
+  - ID: 4
+    Type: 3
+    Window:
+      serializedVersion: 2
+      x: 675
+      y: 359
+      width: 200
+      height: 175
+    Inputs:
+    - ID: 0
+      Name: Speaker
+      Type: 0
+      Y: 7.5
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 02000000
+        values:
+        - Array: 00000000
+    - ID: 1
+      Name: Previous
+      Type: 0
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 03000000
         values:
         - Array: 01000000
     Outputs:
@@ -99,19 +221,162 @@ MonoBehaviour:
       Y: 7.5
       AllowMultipleConnections: 1
       Connections:
-        keys: 090000000a000000
-        values:
-        - Array: 00000000
-        - Array: 00000000
+        keys: 
+        values: []
     - ID: 1
       Name: Next
       Type: 1
       Y: 35
       AllowMultipleConnections: 0
       Connections:
-        keys: 08000000
+        keys: 06000000
         values:
         - Array: 00000000
+    AllowedInputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 2
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 3
+      InputID: 1
+      OutputType: 1
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 0
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 3
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 0
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 2
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 3
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 4
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 5
+      OutputType: 3
+      OutputID: 1
+  - ID: 6
+    Type: 4
+    Window:
+      serializedVersion: 2
+      x: 945.81213
+      y: 226
+      width: 300
+      height: 125
+    Inputs:
+    - ID: 0
+      Name: Previous Messages
+      Type: 0
+      Y: 7.5
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 04000000
+        values:
+        - Array: 01000000
+    Outputs:
+    - ID: 0
+      Name: Choice 1
+      Type: 1
+      Y: 45
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 07000000
+        values:
+        - Array: 01000000
+    - ID: 1
+      Name: Choice 2
+      Type: 1
+      Y: 75
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 08000000
+        values:
+        - Array: 01000000
+    AllowedInputs:
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 0
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 1
+  - ID: 7
+    Type: 3
+    Window:
+      serializedVersion: 2
+      x: 1351.7299
+      y: 53
+      width: 200
+      height: 175
+    Inputs:
+    - ID: 0
+      Name: Speaker
+      Type: 0
+      Y: 7.5
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 02000000
+        values:
+        - Array: 00000000
+    - ID: 1
+      Name: Previous
+      Type: 0
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 06000000
+        values:
+        - Array: 00000000
+    Outputs:
+    - ID: 0
+      Name: Speaker
+      Type: 1
+      Y: 7.5
+      AllowMultipleConnections: 1
+      Connections:
+        keys: 
+        values: []
+    - ID: 1
+      Name: Next
+      Type: 1
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 
+        values: []
     AllowedInputs:
     - InputType: 3
       InputID: 0
@@ -163,62 +428,11 @@ MonoBehaviour:
       OutputType: 3
       OutputID: 1
   - ID: 8
-    Type: 4
-    Window:
-      serializedVersion: 2
-      x: 931.64404
-      y: 405
-      width: 300
-      height: 125
-    Inputs:
-    - ID: 0
-      Name: Previous Messages
-      Type: 0
-      Y: 7.5
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 04000000
-        values:
-        - Array: 01000000
-    Outputs:
-    - ID: 0
-      Name: Choice 1
-      Type: 1
-      Y: 45
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 09000000
-        values:
-        - Array: 01000000
-    - ID: 1
-      Name: Choice 2
-      Type: 1
-      Y: 75
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 0a000000
-        values:
-        - Array: 01000000
-    AllowedInputs:
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 0
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 1
-  - ID: 9
     Type: 3
     Window:
       serializedVersion: 2
-      x: 1350.644
-      y: 46
+      x: 1357.7603
+      y: 265
       width: 200
       height: 175
     Inputs:
@@ -226,208 +440,20 @@ MonoBehaviour:
       Name: Speaker
       Type: 0
       Y: 7.5
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 04000000
-        values:
-        - Array: 00000000
-    - ID: 1
-      Name: Previous
-      Type: 0
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 08000000
-        values:
-        - Array: 00000000
-    Outputs:
-    - ID: 0
-      Name: Speaker
-      Type: 1
-      Y: 7.5
-      AllowMultipleConnections: 1
-      Connections:
-        keys: 
-        values: []
-    - ID: 1
-      Name: Next
-      Type: 1
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 
-        values: []
-    AllowedInputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 2
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 3
-      InputID: 1
-      OutputType: 1
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 0
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 3
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 0
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 2
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 3
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 4
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 5
-      OutputType: 3
-      OutputID: 1
-  - ID: 10
-    Type: 3
-    Window:
-      serializedVersion: 2
-      x: 1362.644
-      y: 328
-      width: 200
-      height: 175
-    Inputs:
-    - ID: 0
-      Name: Speaker
-      Type: 0
-      Y: 7.5
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 04000000
-        values:
-        - Array: 00000000
-    - ID: 1
-      Name: Previous
-      Type: 0
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 08000000
-        values:
-        - Array: 01000000
-    Outputs:
-    - ID: 0
-      Name: Speaker
-      Type: 1
-      Y: 7.5
-      AllowMultipleConnections: 1
-      Connections:
-        keys: 
-        values: []
-    - ID: 1
-      Name: Next
-      Type: 1
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 
-        values: []
-    AllowedInputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 2
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 3
-      InputID: 1
-      OutputType: 1
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 0
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 3
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 0
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 2
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 3
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 4
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 5
-      OutputType: 3
-      OutputID: 1
-  - ID: 12
-    Type: 3
-    Window:
-      serializedVersion: 2
-      x: 355
-      y: 306
-      width: 200
-      height: 175
-    Inputs:
-    - ID: 0
-      Name: Speaker
-      Type: 0
-      Y: 7.5
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 0d000000
-        values:
-        - Array: 00000000
-    - ID: 1
-      Name: Previous
-      Type: 0
-      Y: 35
       AllowMultipleConnections: 0
       Connections:
         keys: 02000000
         values:
         - Array: 00000000
+    - ID: 1
+      Name: Previous
+      Type: 0
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 06000000
+        values:
+        - Array: 01000000
     Outputs:
     - ID: 0
       Name: Speaker
@@ -443,9 +469,8 @@ MonoBehaviour:
       Y: 35
       AllowMultipleConnections: 0
       Connections:
-        keys: 04000000
-        values:
-        - Array: 01000000
+        keys: 
+        values: []
     AllowedInputs:
     - InputType: 3
       InputID: 0
@@ -496,33 +521,8 @@ MonoBehaviour:
       InputID: 5
       OutputType: 3
       OutputID: 1
-  - ID: 13
-    Type: 2
-    Window:
-      serializedVersion: 2
-      x: 66
-      y: 127
-      width: 200
-      height: 110
-    Inputs: []
-    Outputs:
-    - ID: 0
-      Name: Messages
-      Type: 1
-      Y: 40
-      AllowMultipleConnections: 1
-      Connections:
-        keys: 0c000000
-        values:
-        - Array: 00000000
-    AllowedInputs: []
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 2
-      OutputID: 0
   SpeakerNodes:
-  - ID: 3
+  - ID: 1
     Type: 2
     Window:
       serializedVersion: 2
@@ -547,38 +547,138 @@ MonoBehaviour:
       OutputType: 2
       OutputID: 0
     Data:
-      ID: 3
-      Name: Security Guard
-      Icon: {fileID: 0}
-  - ID: 13
-    Type: 2
-    Window:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 200
-      height: 110
-    Inputs: []
-    Outputs:
-    - ID: 0
-      Name: Messages
-      Type: 1
-      Y: 40
-      AllowMultipleConnections: 1
-      Connections:
-        keys: 
-        values: []
-    AllowedInputs: []
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 2
-      OutputID: 0
-    Data:
-      ID: 13
+      ID: 1
       Name: Tim
       Icon: {fileID: 0}
+  - ID: 2
+    Type: 2
+    Window:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 200
+      height: 110
+    Inputs: []
+    Outputs:
+    - ID: 0
+      Name: Messages
+      Type: 1
+      Y: 40
+      AllowMultipleConnections: 1
+      Connections:
+        keys: 
+        values: []
+    AllowedInputs: []
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 2
+      OutputID: 0
+    Data:
+      ID: 2
+      Name: Security Guard
+      Icon: {fileID: 0}
   MessageNodes:
+  - ID: 3
+    Type: 3
+    Window:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 200
+      height: 175
+    Inputs:
+    - ID: 0
+      Name: Speaker
+      Type: 0
+      Y: 7.5
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 
+        values: []
+    - ID: 1
+      Name: Previous
+      Type: 0
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 
+        values: []
+    Outputs:
+    - ID: 0
+      Name: Speaker
+      Type: 1
+      Y: 7.5
+      AllowMultipleConnections: 1
+      Connections:
+        keys: 
+        values: []
+    - ID: 1
+      Name: Next
+      Type: 1
+      Y: 35
+      AllowMultipleConnections: 0
+      Connections:
+        keys: 
+        values: []
+    AllowedInputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 2
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 3
+      InputID: 1
+      OutputType: 1
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 4
+      OutputID: 0
+    AllowedOutputs:
+    - InputType: 3
+      InputID: 0
+      OutputType: 3
+      OutputID: 0
+    - InputType: 3
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 0
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 1
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 2
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 3
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 4
+      OutputType: 3
+      OutputID: 1
+    - InputType: 4
+      InputID: 5
+      OutputType: 3
+      OutputID: 1
+    Data:
+      ID: 3
+      Speaker: 1
+      SpeakerName: Tim
+      PreviousMessage: -1
+      NextMessage: 4
+      MessageText: 'Hi, I''m Tim. '
+      Clip: {fileID: 0}
   - ID: 4
     Type: 3
     Window:
@@ -673,15 +773,13 @@ MonoBehaviour:
       OutputID: 1
     Data:
       ID: 4
-      Speaker: 3
+      Speaker: 2
       SpeakerName: Security Guard
-      PreviousMessage: 12
-      NextMessage: 8
-      MessageText: 'Why, yes. I recognise you
-
-'
+      PreviousMessage: 3
+      NextMessage: 6
+      MessageText: Yes. I know who you are
       Clip: {fileID: 0}
-  - ID: 9
+  - ID: 7
     Type: 3
     Window:
       serializedVersion: 2
@@ -774,16 +872,14 @@ MonoBehaviour:
       OutputType: 3
       OutputID: 1
     Data:
-      ID: 9
-      Speaker: 3
+      ID: 7
+      Speaker: 2
       SpeakerName: Security Guard
       PreviousMessage: -1
       NextMessage: -1
-      MessageText: 'yes
-
-'
+      MessageText: Sorry I can't.
       Clip: {fileID: 0}
-  - ID: 10
+  - ID: 8
     Type: 3
     Window:
       serializedVersion: 2
@@ -876,115 +972,15 @@ MonoBehaviour:
       OutputType: 3
       OutputID: 1
     Data:
-      ID: 10
-      Speaker: 3
+      ID: 8
+      Speaker: 2
       SpeakerName: Security Guard
-      PreviousMessage: 8
+      PreviousMessage: 6
       NextMessage: -1
-      MessageText: No, I can't.
-      Clip: {fileID: 0}
-  - ID: 12
-    Type: 3
-    Window:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 200
-      height: 175
-    Inputs:
-    - ID: 0
-      Name: Speaker
-      Type: 0
-      Y: 7.5
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 
-        values: []
-    - ID: 1
-      Name: Previous
-      Type: 0
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 
-        values: []
-    Outputs:
-    - ID: 0
-      Name: Speaker
-      Type: 1
-      Y: 7.5
-      AllowMultipleConnections: 1
-      Connections:
-        keys: 
-        values: []
-    - ID: 1
-      Name: Next
-      Type: 1
-      Y: 35
-      AllowMultipleConnections: 0
-      Connections:
-        keys: 
-        values: []
-    AllowedInputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 2
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 3
-      InputID: 1
-      OutputType: 1
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 4
-      OutputID: 0
-    AllowedOutputs:
-    - InputType: 3
-      InputID: 0
-      OutputType: 3
-      OutputID: 0
-    - InputType: 3
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 0
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 1
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 2
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 3
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 4
-      OutputType: 3
-      OutputID: 1
-    - InputType: 4
-      InputID: 5
-      OutputType: 3
-      OutputID: 1
-    Data:
-      ID: 12
-      Speaker: 13
-      SpeakerName: Tim
-      PreviousMessage: -1
-      NextMessage: 4
-      MessageText: Hi, I am Tim
+      MessageText: Yes, Of course. This way.
       Clip: {fileID: 0}
   ConversationNodes:
-  - ID: 2
+  - ID: 0
     Type: 1
     Window:
       serializedVersion: 2
@@ -1009,11 +1005,11 @@ MonoBehaviour:
       OutputType: 1
       OutputID: 0
     Data:
-      ID: 2
-      Name: Meeting Security Guard
-      FirstMessage: 12
+      ID: 0
+      Name: Meeting Secury Guard
+      FirstMessage: 3
   ChoiceNodes:
-  - ID: 8
+  - ID: 6
     Type: 2
     Window:
       serializedVersion: 2
@@ -1046,8 +1042,8 @@ MonoBehaviour:
       OutputType: 4
       OutputID: 1
     Data:
-      ID: 8
+      ID: 6
       Choices:
-      - Can I have a cola?
-      - Can you help me find Jula?
-      NextMessages: 090000000a000000
+      - Can you help me find the key?
+      - Can you help me find the entrance?
+      NextMessages: 0700000008000000

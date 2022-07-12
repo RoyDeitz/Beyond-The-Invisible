@@ -22,13 +22,19 @@ namespace QuantumTek.QuantumDialogue.Demo
         {
             handler.SetConversation("Meeting with Bob");
             SetText();
+            handler.SetConversation("Meeting Security Guard");
+            SetText();
+
         }
 
         private void Update()
         {
             // Don't do anything if the conversation is over
-            if (ended)
-                return;
+            if (ended) 
+            { 
+                this.gameObject.SetActive(false);
+                return; 
+            }
 
             // Check if the space key is pressed and the current message is not a choice
             if (handler.currentMessageInfo.Type == QD_NodeType.Message && Input.GetKeyUp(KeyCode.Space))
@@ -106,7 +112,7 @@ namespace QuantumTek.QuantumDialogue.Demo
             }
             else if (handler.currentMessageInfo.Type == QD_NodeType.Choice)
             {
-                speakerName.text = "Player";
+                speakerName.text = "Tim";
                 GenerateChoices();
             }
         }
