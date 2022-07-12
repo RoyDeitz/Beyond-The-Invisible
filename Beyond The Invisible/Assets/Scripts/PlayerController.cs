@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using QuantumTek.QuantumDialogue.Demo;
 
 public class PlayerController : MonoBehaviour
 { //Reference to the Character controller
@@ -34,8 +35,17 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
+    public bool isSpeaking = false;
+    public Canvas canvasDialogue;
+    public Canvas canvasStartConversation;
+    public Canvas canvasStartInspect;
+
     void Start()
     {
+        canvasStartConversation.enabled = false; 
+        canvasDialogue.enabled=false;
+        canvasStartInspect.enabled=false;
+        isSpeaking = false;
         controller = gameObject.GetComponent<CharacterController>();
         hasShield = false;
     }
@@ -132,22 +142,46 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "NPC") 
+        if (other.gameObject.tag == "NPC")
         {
-            if (Input.GetKeyDown(KeyCode.F)) 
+            if (!isSpeaking)
             {
-            //Start dialogue
+                canvasStartConversation.enabled=true;
+                Debug.Log("enter trigger");
             }
         }
-        
     }
 
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Danger")
+        if (other.gameObject.tag == "Danger")
         {
             inDanger = true;
+
+        }
+        if (other.gameObject.tag == "NPC")
+        {
+            if (!isSpeaking)
+            {
+
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    isSpeaking = true;
+                    canvasStartConversation.enabled = false;
+                    Debug.Log("pressing button f");
+                    if (other.gameObject.GetComponent<NPC>() != null)
+                    {
+                        canvasDialogue.GetComponent<QD_DialogueDemo>().conversationTitle = other.gameObject.GetComponent<NPC>().conversationTitle;
+                        canvasDialogue.enabled = true;
+                        Debug.Log("conversation started");
+                    }
+                    else 
+                    {
+                        Debug.Log("conversation not Found");
+                    }
+                }
+            }
 
         }
     }
@@ -155,5 +189,8 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if(inDanger)inDanger = false;
+        if(canvasStartConversation.enabled==true)canvasStartConversation.enabled = false;
+
+        Debug.Log("exit Trigger");
     }
 }

@@ -17,16 +17,19 @@ namespace QuantumTek.QuantumDialogue.Demo
         private List<TextMeshProUGUI> inactiveChoices = new List<TextMeshProUGUI>();
 
         private bool ended;
+        public string conversationTitle= "Meeting Secury Guard";
+
+       
 
         private void Awake()
         {
-            handler.SetConversation("Meeting with Bob");
+            handler.SetConversation(conversationTitle);
             SetText();
-            handler.SetConversation("Meeting Security Guard");
-            SetText();
-
         }
-
+        private void OnEnable()
+        {
+            LoadConversation();
+        }
         private void Update()
         {
             // Don't do anything if the conversation is over
@@ -137,6 +140,12 @@ namespace QuantumTek.QuantumDialogue.Demo
                 return;
 
             Next(choice);
+        }
+
+        public void LoadConversation() 
+        {
+            handler.SetConversation(conversationTitle);
+            SetText();
         }
     }
 }
