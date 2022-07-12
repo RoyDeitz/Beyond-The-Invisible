@@ -3,7 +3,12 @@ guid: dd4d0e07fc7b16643a315d6213e5d34b
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yard windows
+    second: {fileID: 2100000, guid: 925d4ec8240273e41b676fe3bfaed26f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

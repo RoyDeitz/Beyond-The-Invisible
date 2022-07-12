@@ -3,7 +3,27 @@ guid: 9b040db8154ca2e40a4570865119f02f
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light white
+    second: {fileID: 2100000, guid: d23b8fc354412e447b2fd8fe64308a53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light_red
+    second: {fileID: 2100000, guid: e8b7f5cf643ed9d47b6754fb269311ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yard op
+    second: {fileID: 2100000, guid: 4fabbe4eff7a23547bb8fd47b4286385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yard windows
+    second: {fileID: 2100000, guid: 925d4ec8240273e41b676fe3bfaed26f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
