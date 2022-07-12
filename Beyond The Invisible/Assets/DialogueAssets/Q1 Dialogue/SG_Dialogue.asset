@@ -10,58 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fc788fe28a1947c5906bf24c0472406, type: 3}
-  m_Name: Dialogue1
+  m_Name: SG_Dialogue
   m_EditorClassIdentifier: 
   Conversations:
   - ID: 0
-    Name: 
-    FirstMessage: 0
-  - ID: 2
     Name: Meeting Security Guard
-    FirstMessage: 12
+    FirstMessage: 3
   Speakers:
-  - ID: 3
-    Name: Security Guard
-    Icon: {fileID: 0}
-  - ID: 13
+  - ID: 1
     Name: Tim
     Icon: {fileID: 0}
+  - ID: 2
+    Name: Security Guard
+    Icon: {fileID: 0}
   Messages:
-  - ID: 4
-    Speaker: 3
-    SpeakerName: Security Guard
-    PreviousMessage: 12
-    NextMessage: 8
-    MessageText: 'Why, yes. I recognise you
-
-'
-    Clip: {fileID: 0}
-  - ID: 9
-    Speaker: 3
-    SpeakerName: Security Guard
-    PreviousMessage: -1
-    NextMessage: -1
-    MessageText: 'yes
-
-'
-    Clip: {fileID: 0}
-  - ID: 10
-    Speaker: 3
-    SpeakerName: Security Guard
-    PreviousMessage: 8
-    NextMessage: -1
-    MessageText: No, I can't.
-    Clip: {fileID: 0}
-  - ID: 12
-    Speaker: 13
+  - ID: 3
+    Speaker: 1
     SpeakerName: Tim
     PreviousMessage: -1
     NextMessage: 4
-    MessageText: Hi, I am Tim
+    MessageText: 'Hi, I''m Tim. '
+    Clip: {fileID: 0}
+  - ID: 4
+    Speaker: 2
+    SpeakerName: Security Guard
+    PreviousMessage: 3
+    NextMessage: 6
+    MessageText: Yes. I know who you are
+    Clip: {fileID: 0}
+  - ID: 7
+    Speaker: 2
+    SpeakerName: Security Guard
+    PreviousMessage: -1
+    NextMessage: -1
+    MessageText: Sorry I can't.
+    Clip: {fileID: 0}
+  - ID: 8
+    Speaker: 2
+    SpeakerName: Security Guard
+    PreviousMessage: 6
+    NextMessage: -1
+    MessageText: Yes, Of course. This way.
     Clip: {fileID: 0}
   Choices:
-  - ID: 8
+  - ID: 6
     Choices:
-    - Can I have a cola?
-    - Can you help me find Jula?
-    NextMessages: 090000000a000000
+    - Can you help me find the key?
+    - Can you help me find the entrance?
+    NextMessages: 0700000008000000

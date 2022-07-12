@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     //Player Movement Speed
     public float movementSpeed = 12f;
     public float sprintFactor = 2f;
+    public float groundCheckRadius = .1f;
     Vector3 movementVector;
     Vector3 moveDirection;
     public float rotationSmoothTime = .1f;
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     bool isGrounded;
     public GameObject shield;
+
+    public Animator anim;
 
     void Start()
     {
@@ -64,7 +67,8 @@ public class PlayerController : MonoBehaviour
         {
             shield.SetActive(false);
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        anim.SetBool("Grounded", isGrounded);
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -94,19 +98,24 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-      
+
 
         //Double the speed on sprint button
-        if (Input.GetKey(KeyCode.LeftShift) && z > 0 && isGrounded == true) movementVector = movementVector * sprintFactor;
+        if (Input.GetKey(KeyCode.LeftShift) && z > 0 && isGrounded == true)
+        {
+            movementVector = movementVector * sprintFactor;
+        }
 
+        anim.SetFloat("Speed", (moveDirection.normalized * movementSpeed).magnitude);
         controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
 
         //Jump
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             verticalVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-
+        */
         //Reset the vertical velocity to avoid it being to strong
         if (isGrounded == true && verticalVelocity.y < 0f)
         {
