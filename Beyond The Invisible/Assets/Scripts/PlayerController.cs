@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     //Player Movement Speed
     public float movementSpeed = 12f;
     public float sprintFactor = 2f;
+    public float groundCheckRadius = .1f;
     Vector3 movementVector;
     Vector3 moveDirection;
     public float rotationSmoothTime = .1f;
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             shield.SetActive(false);
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
