@@ -33,28 +33,173 @@ MonoBehaviour:
     Clip: {fileID: 0}
   - ID: 4
     Speaker: 2
-    SpeakerName: Security Guard
+    SpeakerName: Widow
     PreviousMessage: 3
-    NextMessage: 6
-    MessageText: Yes. I know who you are
-    Clip: {fileID: 0}
-  - ID: 7
-    Speaker: 2
-    SpeakerName: Security Guard
-    PreviousMessage: -1
-    NextMessage: -1
-    MessageText: Sorry I can't.
+    NextMessage: 8
+    MessageText: 'Yes, so... Okay. Did you happen to catch some strange transmissions?
+      I mean, you probably have, if you have such an equipment... Like the voices
+      of dead people? Them saying something comprehensible, maybe even talking to
+      you?
+
+'
     Clip: {fileID: 0}
   - ID: 8
     Speaker: 2
-    SpeakerName: Security Guard
-    PreviousMessage: 6
-    NextMessage: -1
-    MessageText: Yes, Of course. This way.
+    SpeakerName: Widow
+    PreviousMessage: 4
+    NextMessage: 11
+    MessageText: It's like... I was turning the radio handle, trying to catch anything,
+      because radio catches nothing now, as you know. And...
     Clip: {fileID: 0}
-  Choices:
-  - ID: 6
-    Choices:
-    - Can you help me find the key?
-    - Can you help me find the entrance?
-    NextMessages: 0700000008000000
+  - ID: 11
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 8
+    NextMessage: 12
+    MessageText: You see, my partner died recently. Like recently, already after
+      this isolation has begun. This might be important, I guess.
+    Clip: {fileID: 0}
+  - ID: 12
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 11
+    NextMessage: 13
+    MessageText: And at one moment, as I turned the handle, i just heard his voice.
+      He was speaking to... should I retell this? It's not like I thought this up
+      or was hallucinating, you know? It was just too real.
+    Clip: {fileID: 0}
+  - ID: 13
+    Speaker: 1
+    SpeakerName: Tim
+    PreviousMessage: 12
+    NextMessage: 14
+    MessageText: Don't explain yourself, I believe you. I have seen that before.
+      During the isolation people have everything they say recorded in some way,
+      and sometimes we can hear recorded messages via radio. I belong to the State
+      Institute of Radiotechnology and the Information Technologies. We are investigating
+      this.
+    Clip: {fileID: 0}
+  - ID: 14
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 13
+    NextMessage: 15
+    MessageText: I know, that's the point! ...Sorry. I hope I didn't interrupt you.
+      I know it happens, but I've heard him saying things from the past. Things he
+      has said long before all this happened, it couldn't have been recorded by any
+      means. That's number one.
+    Clip: {fileID: 0}
+  - ID: 15
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 14
+    NextMessage: 16
+    MessageText: And then... As I understood something weird was happening, I began
+      to talk to the radio. Like I just shouted "do you hear me?", something along
+      the lines. But it seemed he didn't get me. Or didn't hear me. I just heard
+      him saying random sentences all the time.
+    Clip: {fileID: 0}
+  - ID: 16
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 15
+    NextMessage: 17
+    MessageText: But you know that? The connection was lost multiple times. Everything
+      just kept fading into static. But as I was talking to my radio, his voice kept
+      returning for some time.
+    Clip: {fileID: 0}
+  - ID: 17
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 16
+    NextMessage: 18
+    MessageText: But eventually it has faded enitrely. And what I wanted to ask was...
+      If you could find out how it works? If you find a frequency or how I can set
+      my equipment up to hearing him again? Please?
+    Clip: {fileID: 0}
+  - ID: 18
+    Speaker: 1
+    SpeakerName: Tim
+    PreviousMessage: 17
+    NextMessage: 19
+    MessageText: Yes. I got you. You see, such hasn't occured before. Usually the
+      liminal crosstalk - that's how we call it - doesn't react to voice. If you
+      haven't imagined it, of course. I will study this.
+    Clip: {fileID: 0}
+  - ID: 19
+    Speaker: 1
+    SpeakerName: Tim
+    PreviousMessage: 18
+    NextMessage: 20
+    MessageText: And you know what, I could use your voice samples. Best tell something
+      you definitely remember having said back then, I'll turn on the mic. I will
+      use it... as a bait, you can say.
+    Clip: {fileID: 0}
+  - ID: 20
+    Speaker: 1
+    SpeakerName: Tim
+    PreviousMessage: 19
+    NextMessage: 21
+    MessageText: Okay... Yes, I can do that, let me collect myself. I think I'm ready.
+      So I've heard him speaking as if he was talking on the phone. He was an engineer,
+      you see. And I've heard him discussing some diagram and that he'd like to have
+      an appointment because he'd need to see an electrician for some advice on the
+      circuits...
+    Clip: {fileID: 0}
+  - ID: 21
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 20
+    NextMessage: 22
+    MessageText: 'Sorry, that''s not what you need. So I said: "Hey, Dima! Can you
+      hear me? It''s me, Alina! Is that you?".'
+    Clip: {fileID: 0}
+  - ID: 22
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 21
+    NextMessage: 23
+    MessageText: And then it just began speaking with his voice... As if he was having
+      a conversation... with his mother. And I can certainly swear I haven't imagined
+      that, by the way, because I have almost never seen her, had two times and that
+      was enough for years!..
+    Clip: {fileID: 0}
+  - ID: 23
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 22
+    NextMessage: 24
+    MessageText: And I repeated, "Where are you? Can you hear me? I'm not your mother,
+      I'm your wife!".
+    Clip: {fileID: 0}
+  - ID: 24
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 23
+    NextMessage: 25
+    MessageText: And as if he understood I wasn't the mother, he disappeared for
+      some time, and I could only hear the static. And then I called him by the name
+      several times, just "Dima, are you there?", like this.
+    Clip: {fileID: 0}
+  - ID: 25
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 24
+    NextMessage: 26
+    MessageText: And he emerged again! He said, "Hi honey, I won't be home for some
+      time, I got a business trip in Naljchik offered...". And silence. I mean, static.
+      I remember him saying that, he has called me like that around a year ago and
+      has really had a business trip. Hasn't return home anytime soon, was sent to
+      the front, can you imagine? I've lost him not one but two times, one can say...
+    Clip: {fileID: 0}
+  - ID: 26
+    Speaker: 2
+    SpeakerName: Widow
+    PreviousMessage: 25
+    NextMessage: -1
+    MessageText: Sorry, it really doesn't matter. But as I was talking to him...
+      to the radio at that time, those were the last words I've heard from him. However
+      long I called, I've heard of him no more. Will you try to find him again, please?
+      Or, at least, just say where he is and what this whole thing was?..
+    Clip: {fileID: 0}
+  Choices: []
