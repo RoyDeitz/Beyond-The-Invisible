@@ -7,7 +7,9 @@ using QuantumTek.QuantumDialogue.Demo;
 public class PlayerController : MonoBehaviour
 { //Reference to the Character controller
     CharacterController controller;
-    float health = 100;
+    public float health = 100;
+    public float minDamage = .5f;
+    public float maxDamage = 7f;
     public Slider healthSlider;
     bool hasShield=false;
     bool inDanger = false;
@@ -57,11 +59,11 @@ public class PlayerController : MonoBehaviour
         {
             if (!hasShield)
             {
-                health -= 7f * Time.deltaTime;
+                health -= maxDamage * Time.deltaTime;
             }
             else 
             {
-                health -= .5f * Time.deltaTime;
+                health -= minDamage* Time.deltaTime;
             }
         }
 
@@ -150,12 +152,28 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("enter trigger");
             }
         }
+
+      /* if (other.gameObject.tag == "ParticleDanger")
+        {
+            
+            if (hasShield)
+            {
+                health -= minDamage * .5f;
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                health -= maxDamage * .4f;
+                Destroy(other.gameObject);
+            }
+
+        }*/
     }
 
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Danger")
+        if (other.gameObject.tag == "Danger" )
         {
             inDanger = true;
 
@@ -189,7 +207,8 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if(inDanger)inDanger = false;
-        if(canvasStartConversation.enabled==true)canvasStartConversation.enabled = false;
+       
+        if (canvasStartConversation.enabled==true)canvasStartConversation.enabled = false;
 
         Debug.Log("exit Trigger");
     }

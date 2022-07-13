@@ -3147,6 +3147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32381efbe8389eb48b5582f95d3dd9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  minDamage: 0.5
+  maxDamage: 7
   healthSlider: {fileID: 2010436395}
   movementSpeed: 3
   sprintFactor: 1.2
@@ -26781,6 +26784,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092775428}
   m_CullTransparentMesh: 1
+--- !u!1001 &6779683144688353570
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419370, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814738306001419372, guid: 39a6a9d371781b749b34afdeb378c717,
+        type: 3}
+      propertyPath: m_Name
+      value: EmptyCollider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39a6a9d371781b749b34afdeb378c717, type: 3}
 --- !u!1 &7221110949355804992
 GameObject:
   m_ObjectHideFlags: 0
@@ -26793,9 +26865,10 @@ GameObject:
   - component: {fileID: 7221110949374509088}
   - component: {fileID: 7221110949374556544}
   - component: {fileID: 7221110949366017184}
+  - component: {fileID: 7221110949374556545}
   m_Layer: 0
   m_Name: WFXMR_SmokeGrenade AlphaBlend Gray
-  m_TagString: Untagged
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26826,7 +26899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7221110949355804992}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.8509784, y: 0.37532663, z: -8.804353}
+  m_LocalPosition: {x: -4.8509784, y: 0.38, z: -14.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26870,7 +26943,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7221110949355804992}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 1.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -30306,21 +30379,15 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    m_Planes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    m_Planes: []
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
@@ -30481,33 +30548,28 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 0
-    maxKillSpeed: 10000
+    maxKillSpeed: 1000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 2147483647
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
     collisionMessages: 0
-    collidesWithDynamic: 1
+    collidesWithDynamic: 0
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
     serializedVersion: 2
-    inside: 1
+    inside: 2
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
     colliderQueryMode: 0
-    radiusScale: 1
+    radiusScale: 0.8
     primitives:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1106558388}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -36075,6 +36137,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!135 &7221110949374556545
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7221110949355804992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.97
+  m_Center: {x: 0.025941372, y: 0.26680046, z: 1.45372}
 --- !u!199 &7221110949374556546
 ParticleSystemRenderer:
   serializedVersion: 6
