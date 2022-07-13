@@ -19,8 +19,8 @@ TagManager:
   - Player
   - Interaction
   - Particle
-  - 
-  - 
+  - camera
+  - NotWithCamera
   - 
   - 
   - 

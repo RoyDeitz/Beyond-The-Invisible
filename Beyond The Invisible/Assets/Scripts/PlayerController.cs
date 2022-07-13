@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public Canvas canvasDialogue;
     public Canvas canvasStartConversation;
     public Canvas canvasStartInspect;
+    public AudioSource footSound;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         isSpeaking = false;
         controller = gameObject.GetComponent<CharacterController>();
         hasShield = false;
+        footSound.enabled = false;
     }
 
     void Update()
@@ -101,12 +103,14 @@ public class PlayerController : MonoBehaviour
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationSmoothVelocity, rotationSmoothTime);
                 transform.rotation = Quaternion.Euler(0, angle, 0);
                 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+                footSound.enabled = true;
 
 
             }
             else 
             {
                 moveDirection = Vector3.zero;
+                footSound.enabled = false;
             }
         }
 

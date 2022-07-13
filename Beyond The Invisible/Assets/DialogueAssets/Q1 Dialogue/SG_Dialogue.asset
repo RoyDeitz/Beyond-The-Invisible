@@ -21,7 +21,7 @@ MonoBehaviour:
     Name: Tim
     Icon: {fileID: 0}
   - ID: 2
-    Name: Security Guard
+    Name: Widow
     Icon: {fileID: 0}
   Messages:
   - ID: 3
